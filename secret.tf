@@ -3,7 +3,6 @@ resource "aws_secretsmanager_secret" "main" {
   The secret container in AWS Secrets Manager
   */
   name = var.name
-  tags = var.tags
 }
 
 resource "aws_secretsmanager_secret_version" "main" {
