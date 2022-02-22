@@ -25,7 +25,7 @@ variable "contents" {
   sensitive = true
 }
 
-variable "encode-base64" {
+variable "encode_base64" {
   description = "Encode the contents of the secret value to base64."
   type = bool
   default = false
