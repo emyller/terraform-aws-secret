@@ -10,5 +10,5 @@ resource "aws_secretsmanager_secret_version" "main" {
   The latest version of the secret
   */
   secret_id = aws_secretsmanager_secret.main.id
-  secret_string = var.base64encode != true ? local.contents : base64encode(local.contents)
+  secret_string = var.encode-base64 != true ? local.contents : base64encode(local.contents)
 }
