@@ -24,3 +24,9 @@ variable "contents" {
   default = null
   sensitive = true
 }
+
+variable "base64encode" {
+  description = "Encode the contents of the secret value to base64."
+  type = bool
+  default = false
+}
