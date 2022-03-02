@@ -3,7 +3,11 @@ output "arn" {
 }
 
 output "name" {
-  value = aws_secretsmanager_secret.main.name
+  description = "Name of the created secret."
+  value = split("--", join("--", [  # Force-wait for resource
+    aws_secretsmanager_secret.main.arn,  # The ARN only exists after resource
+    aws_secretsmanager_secret.main.name
+  ]))[1]
 }
 
 output "contents" {
