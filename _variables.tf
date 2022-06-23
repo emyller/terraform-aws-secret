@@ -4,10 +4,7 @@ variable "name" {
 }
 
 variable "generate" {
-  description = <<-EOT
-    Whether to have the secret value generated.
-    This overrides 'contents'.
-  EOT
+  description = "Whether to have the secret value generated."
   type = bool
   default = false
 }
@@ -19,9 +16,12 @@ variable "length" {
 }
 
 variable "contents" {
-  description = "The contents of the secret value, needed unless generate = true."
+  description = <<-EOT
+    The contents of the secret value. If generate = true, this will be used as
+    template, where `{value}` is replaced by the generated value.
+  EOT
   type = string
-  default = null
+  default = "{value}"
   sensitive = true
 }
 
