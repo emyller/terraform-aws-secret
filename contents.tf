@@ -11,5 +11,6 @@ resource "random_password" "optional" {
   */
   count = var.generate ? 1 : 0
   length = var.length
-  special = true
+  special = var.special
+  override_special = var.override_special
 }

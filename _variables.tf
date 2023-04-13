@@ -9,6 +9,18 @@ variable "generate" {
   default = false
 }
 
+variable "special" {
+  description = "When generate=true, whether to use special chars."
+  type = bool
+  default = null
+}
+
+variable "override_special" {
+  description = "When generate=true, the special chars allowed. Defaults to any."
+  type = string
+  default = null
+}
+
 variable "length" {
   description = "The length of the secret value, valid if generate = true."
   type = number
